@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | Nwinyi Holdings</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+</head>
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        <h2>NWINYI HOLDINGS</h2>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        ☰
+    </div>
+
+    <nav id="nav-menu">
+
+        <ul>
+
+            <li>
+    <a href="index.html">
+        <i class="fas fa-house"></i> Home
+    </a>
+</li>
+
+<li>
+    <a href="aboutUs.html">
+        <i class="fas fa-circle-info"></i> About
+    </a>
+</li>
+
+<li>
+    <a href="products.html">
+        <i class="fas fa-box-open"></i> Products
+    </a>
+</li>
+
+<li>
+    <a href="shop.html">
+        <i class="fas fa-store"></i> Shop
+    </a>
+</li>
+
+<li>
+    <a href="cart.html">
+        <i class="fas fa-cart-shopping"></i> Cart
+    </a>
+</li>
+
+<li>
+    <a href="checkout.html">
+        <i class="fas fa-credit-card"></i> Checkout
+    </a>
+</li>
+
+<li>
+    <a href="contactUs.html">
+        <i class="fas fa-envelope"></i> Contact
+    </a>
+</li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="page-banner">
+
+    <h1>Checkout</h1>
+
+    <p>Complete your order securely</p>
+
+</section>
+
+<section class="checkout-container">
+
+    <!-- Customer Details -->
+
+    <div class="checkout-form">
+
+        <h2>Delivery Details</h2>
+
+        <form id="checkoutForm">
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required>
+
+            <input
+                type="text"
+                id="address"
+                placeholder="Street Address"
+                required>
+
+            <input
+                type="text"
+                id="city"
+                placeholder="City"
+                required>
+
+            <input
+                type="text"
+                id="province"
+                placeholder="Province"
+                required>
+
+            <input
+                type="text"
+                id="postalCode"
+                placeholder="Postal Code"
+                required>
+
+            <textarea
+                rows="4"
+                id="notes"
+                placeholder="Order Notes (Optional)">
+            </textarea>
+
+        </form>
+
+    </div>
+
+    <!-- Order Summary -->
+
+    <div class="checkout-summary">
+
+        <h2>Your Order</h2>
+
+        <div id="checkout-items">
+
+        </div>
+
+        <hr>
+
+        <div class="order-item">
+
+            <span>Subtotal</span>
+
+            <span id="subtotal">
+                R0
+            </span>
+
+        </div>
+
+        <div class="order-item">
+
+            <span>Shipping</span>
+
+            <span>
+                FREE
+            </span>
+
+        </div>
+
+        <div class="order-total">
+
+            <span>Total</span>
+
+            <span id="grand-total">
+                R0
+            </span>
+
+        </div>
+
+        <!-- Payment Methods -->
+
+        <div class="payment-method">
+
+            <h3>Payment Method</h3>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="PayFast"
+                    checked>
+
+                PayFast
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="Ozow">
+
+                Ozow EFT
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="Bank Transfer">
+
+                Direct Bank Transfer
+            </label>
+
+        </div>
+
+        <button
+            class="place-order-btn"
+            onclick="placeOrder()">
+
+            Place Order
+
+        </button>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>NWINYI HOLDINGS PTY LTD</h3>
+
+        <p>
+            School Uniforms | Corporate Wear |
+            Workwear & Safety Clothing
+        </p>
+
+        <p>
+            © 2026 Nwinyi Holdings Pty Ltd.
+            All Rights Reserved.
+        </p>
+
+        <p class="developer">
+            Website Designed & Developed by
+            <strong>Rendzo Ntsanwisi</strong>
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("cart"))
+|| [];
+
+const checkoutItems =
+document.getElementById("checkout-items");
+
+function loadCheckout(){
+
+    checkoutItems.innerHTML = "";
+
+    let subtotal = 0;
+
+    if(cart.length === 0){
+
+        checkoutItems.innerHTML =
+        "<p>Your cart is empty.</p>";
+
+        document.getElementById("subtotal")
+        .textContent = "R0";
+
+        document.getElementById("grand-total")
+        .textContent = "R0";
+
+        return;
+    }
+
+    cart.forEach(product => {
+
+        const itemTotal =
+        product.price *
+        product.quantity;
+
+        subtotal += itemTotal;
+
+        checkoutItems.innerHTML += `
+
+        <div class="checkout-product">
+
+            <img
+            src="${product.image}"
+            alt="${product.name}">
+
+            <div class="checkout-product-info">
+
+                <h4>${product.name}</h4>
+
+                <p>
+                    Quantity:
+                    ${product.quantity}
+                </p>
+
+                <p>
+                    R${product.price}
+                </p>
+
+            </div>
+
+            <button
+            class="remove-item"
+            onclick="removeItem(${product.id})">
+
+                Remove
+
+            </button>
+
+        </div>
+
+        `;
+    });
+
+    document.getElementById("subtotal")
+    .textContent =
+    "R" + subtotal;
+
+    document.getElementById("grand-total")
+    .textContent =
+    "R" + subtotal;
+}
+
+function removeItem(id){
+
+    cart =
+    cart.filter(item =>
+    item.id !== id);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    loadCheckout();
+}
+
+function placeOrder(){
+
+    if(cart.length === 0){
+
+        alert(
+        "Your cart is empty."
+        );
+
+        return;
+    }
+
+    const address = {
+
+        fullName:
+        document.getElementById("fullName").value,
+
+        email:
+        document.getElementById("email").value,
+
+        phone:
+        document.getElementById("phone").value,
+
+        address:
+        document.getElementById("address").value,
+
+        city:
+        document.getElementById("city").value,
+
+        province:
+        document.getElementById("province").value,
+
+        postalCode:
+        document.getElementById("postalCode").value,
+
+        notes:
+        document.getElementById("notes").value
+
+    };
+
+    localStorage.setItem(
+        "deliveryDetails",
+        JSON.stringify(address)
+    );
+
+    alert(
+        "Order placed successfully!"
+    );
+
+    localStorage.removeItem("cart");
+
+    window.location.href =
+    "index.html";
+}
+
+loadCheckout();
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Details | Nwinyi Holdings</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        <h2>NWINYI HOLDINGS</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li>
+    <a href="index.html">
+        <i class="fas fa-house"></i> Home
+    </a>
+</li>
+
+<li>
+    <a href="aboutUs.html">
+        <i class="fas fa-circle-info"></i> About
+    </a>
+</li>
+
+<li>
+    <a href="products.html">
+        <i class="fas fa-box-open"></i> Products
+    </a>
+</li>
+
+<li>
+    <a href="shop.html">
+        <i class="fas fa-store"></i> Shop
+    </a>
+</li>
+
+<li>
+    <a href="cart.html">
+        <i class="fas fa-cart-shopping"></i> Cart
+    </a>
+</li>
+
+<li>
+    <a href="checkout.html">
+        <i class="fas fa-credit-card"></i> Checkout
+    </a>
+</li>
+
+<li>
+    <a href="contactUs.html">
+        <i class="fas fa-envelope"></i> Contact
+    </a>
+</li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- Banner -->
+
+<section class="page-banner">
+
+    <h1>Product Details</h1>
+
+    <p>
+        Premium Quality Uniforms Designed For Professionals
+    </p>
+
+</section>
+
+<!-- Product Details -->
+
+<section class="product-details">
+
+    <div class="product-image">
+
+        <img src="images/school-shirt.jpg"
+             alt="School Shirt">
+
+    </div>
+
+    <div class="product-info">
+
+        <h2>School Shirt</h2>
+
+        <h3>R180.00</h3>
+
+        <p>
+            Premium quality school shirt made from durable,
+            comfortable fabric suitable for daily wear.
+            Available in various sizes and colours.
+        </p>
+
+        <label>Select Size</label>
+
+        <select>
+            <option>Small</option>
+            <option>Medium</option>
+            <option>Large</option>
+            <option>X-Large</option>
+            <option>XX-Large</option>
+        </select>
+
+        <label>Quantity</label>
+
+        <input type="number"
+               min="1"
+               value="1">
+
+        <div class="product-buttons">
+
+            <button class="cart-btn">
+                Add To Cart
+            </button>
+
+            <button class="quote-btn">
+                Request Quote
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Product Specifications -->
+
+<section class="specifications">
+
+    <h2>Product Specifications</h2>
+
+    <table>
+
+        <tr>
+            <th>Material</th>
+            <td>65% Polyester / 35% Cotton</td>
+        </tr>
+
+        <tr>
+            <th>Colour</th>
+            <td>White</td>
+        </tr>
+
+        <tr>
+            <th>Sizes</th>
+            <td>S - XXL</td>
+        </tr>
+
+        <tr>
+            <th>Branding</th>
+            <td>Embroidery Available</td>
+        </tr>
+
+        <tr>
+            <th>Production</th>
+            <td>Locally Manufactured</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<!-- Related Products -->
+
+<section class="related-products">
+
+    <h2>Related Products</h2>
+
+    <div class="product-grid">
+
+        <div class="product-card">
+
+            <img src="images/blazer.jpg" alt="">
+
+            <h3>School Blazer</h3>
+
+            <span>R650</span>
+
+            <button>View Product</button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/tracksuit.jpg" alt="">
+
+            <h3>School Tracksuit</h3>
+
+            <span>R550</span>
+
+            <button>View Product</button>
+
+        </div>
+
+        <div class="product-card">
+
+            <img src="images/jersey.jpg" alt="">
+
+            <h3>School Jersey</h3>
+
+            <span>R350</span>
+
+            <button>View Product</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>NWINYI HOLDINGS PTY LTD</h3>
+
+        <p>
+            School Uniforms | Corporate Wear |
+            Workwear & Safety Clothing
+        </p>
+
+        <p>
+            © 2026 Nwinyi Holdings Pty Ltd.
+            All Rights Reserved.
+        </p>
+
+        <p class="developer">
+            Website Designed & Developed by
+            <strong>Rendzo Ntsanwisi</strong>
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+</script>
+
+</body>
+</html>

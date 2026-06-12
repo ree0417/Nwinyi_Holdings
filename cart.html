@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shopping Cart | Nwinyi Holdings</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        <h2>NWINYI HOLDINGS</h2>
+    </div>
+
+    <nav>
+        <ul>
+            <li>
+    <a href="index.html">
+        <i class="fas fa-house"></i> Home
+    </a>
+</li>
+
+<li>
+    <a href="aboutUs.html">
+        <i class="fas fa-circle-info"></i> About
+    </a>
+</li>
+
+<li>
+    <a href="products.html">
+        <i class="fas fa-box-open"></i> Products
+    </a>
+</li>
+
+<li>
+    <a href="shop.html">
+        <i class="fas fa-store"></i> Shop
+    </a>
+</li>
+
+<li>
+    <a href="cart.html">
+        <i class="fas fa-cart-shopping"></i> Cart
+    </a>
+</li>
+
+<li>
+    <a href="checkout.html">
+        <i class="fas fa-credit-card"></i> Checkout
+    </a>
+</li>
+
+<li>
+    <a href="contactUs.html">
+        <i class="fas fa-envelope"></i> Contact
+    </a>
+</li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- Banner -->
+
+<section class="page-banner">
+
+    <h1>Shopping Cart</h1>
+
+    <p>
+        Review your selected products before checkout
+    </p>
+
+</section>
+
+<!-- Cart Section -->
+
+<section class="cart-section">
+
+    <div class="cart-table-container">
+
+        <table class="cart-table">
+
+            <thead>
+
+                <tr>
+                    <th>Product</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>School Shirt</td>
+
+                    <td>
+                        <img src="images/school-shirt.jpg" alt="">
+                    </td>
+
+                    <td>R180</td>
+
+                    <td>
+                        <input type="number"
+                               value="1"
+                               min="1">
+                    </td>
+
+                    <td>R180</td>
+
+                    <td>
+                        <button class="remove-btn">
+                            Remove
+                        </button>
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>School Blazer</td>
+
+                    <td>
+                        <img src="images/blazer.jpg" alt="">
+                    </td>
+
+                    <td>R650</td>
+
+                    <td>
+                        <input type="number"
+                               value="1"
+                               min="1">
+                    </td>
+
+                    <td>R650</td>
+
+                    <td>
+                        <button class="remove-btn">
+                            Remove
+                        </button>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<!-- Cart Summary -->
+
+<section class="cart-summary">
+
+    <div class="summary-card">
+
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+            <span>Subtotal:</span>
+            <span>R830</span>
+        </div>
+
+        <div class="summary-row">
+            <span>Delivery:</span>
+            <span>R120</span>
+        </div>
+
+        <div class="summary-row total">
+            <span>Total:</span>
+            <span>R950</span>
+        </div>
+
+        <a href="checkout.html" class="checkout-btn">
+            Proceed To Checkout
+        </a>
+
+        <a href="shop.html" class="continue-btn">
+            Continue Shopping
+        </a>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h3>NWINYI HOLDINGS PTY LTD</h3>
+
+        <p>
+            School Uniforms | Corporate Wear |
+            Workwear & Safety Clothing
+        </p>
+
+        <p>
+            © 2026 Nwinyi Holdings Pty Ltd.
+            All Rights Reserved.
+        </p>
+
+        <p class="developer">
+            Website Designed & Developed by
+            <strong>Rendzo Ntsanwisi</strong>
+        </p>
+
+    </div>
+
+</footer>
+
+<script>
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+</script>
+
+</body>
+</html>
